@@ -23,6 +23,8 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@ckeditor/ckeditor5-angular": "^1.1.2",
+    "@ckeditor/ckeditor5-basic-styles": "^16.0.0",
+    "@ckeditor/ckeditor5-build-balloon": "^16.0.0",
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
     "firebase": "^7.6.1",
     "firebaseui": "^4.4.0",

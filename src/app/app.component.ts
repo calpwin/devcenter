@@ -3,9 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import * as firebase from "firebase";
 import * as firebaseui from "firebaseui";
 
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
-
+import * as BalloonEditor from '@ckeditor/ckeditor5-build-balloon';
 
 @Component({
   selector: 'cdc-root',
@@ -14,23 +12,14 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 })
 export class AppComponent implements OnInit {
 
+  public Editor = BalloonEditor;
+
   constructor() {
 
   }
 
   ngOnInit(): void {
 
-    ClassicEditor.create(document.querySelector('.step'), {
-      toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList' ],
-      balloonToolbar: [ 'bold', 'italic', '|', 'undo', 'redo' ],
-      heading: {
-        options: [
-          { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-          { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-          { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-        ]
-      }
-    });
   }
 
   initAuthorization() {
