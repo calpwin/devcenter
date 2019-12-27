@@ -15,7 +15,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from "../environments/environment";
 import {RouterModule} from "@angular/router";
 import {routes} from "../routes";
-import { UserAuthComponent } from './user-auth/user-auth.component';
+import {UserAuthComponent} from './user-auth/user-auth.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
   ],
   imports: [
     RouterModule.forRoot(routes),
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
@@ -32,7 +32,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
     CKEditorModule,
     AngularFireModule.initializeApp(environment.firebase, 'calpvin-devcenter'),
     AngularFireAuthModule,
-    NgxAuthFirebaseUIModule.forRoot(environment.firebase, () => 'calpvin-devcenter',
+    NgxAuthFirebaseUIModule.forRoot(environment.firebase, getAppName,
       {
         authGuardFallbackURL: '/auth'
       })
@@ -43,4 +43,8 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 })
 
 export class AppModule {
+}
+
+export function getAppName() {
+  return 'calpvin-devcenter'
 }
