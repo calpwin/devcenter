@@ -17,6 +17,8 @@ import {RouterModule} from "@angular/router";
 import {routes} from "../routes";
 import { UserAuthComponent } from './user-auth/user-auth.component';
 
+export function getProjName() { return 'calpvin-devcenter'; }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
     CKEditorModule,
     AngularFireModule.initializeApp(environment.firebase, 'calpvin-devcenter'),
     AngularFireAuthModule,
-    NgxAuthFirebaseUIModule.forRoot(environment.firebase, () => 'calpvin-devcenter',
+    NgxAuthFirebaseUIModule.forRoot(environment.firebase, getProjName,
       {
         authGuardFallbackURL: '/auth'
       })

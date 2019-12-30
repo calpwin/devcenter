@@ -1,6 +1,6 @@
 <div class="step-wrapper">
   <mat-card class="step">
-    <ckeditor [editor]="Editor" [config]="Config" data="<p>Hello, world!</p>"></ckeditor>
+    <ckeditor [editor]="Editor" [config]="Config" data="<p>Hello, world!</p>" (ready)="onEditorReady($event)"></ckeditor>
   </mat-card>
 </div>
 
