@@ -10,11 +10,18 @@ import * as BalloonEditor from '@ckeditor/ckeditor5-build-balloon';
 export class AppComponent implements OnInit {
 
   public Editor = BalloonEditor;
+  public Config = {
+    ckfinder: {
+      // Upload the images to the server using the CKFinder QuickUpload command.
+      uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+    }
+  };
 
   constructor() {
 
   }
 
   ngOnInit(): void {
+    this.Editor
   }
 }
