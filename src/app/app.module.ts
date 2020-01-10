@@ -12,10 +12,12 @@ import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from "../environments/environment";
 import {RouterModule} from "@angular/router";
 import {routes} from "../routes";
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import {FormsModule} from "@angular/forms";
 
 export function getProjName() { return 'calpvin-devcenter'; }
 
@@ -34,10 +36,12 @@ export function getProjName() { return 'calpvin-devcenter'; }
     CKEditorModule,
     AngularFireModule.initializeApp(environment.firebase, 'calpvin-devcenter'),
     AngularFireAuthModule,
+    AngularFireStorageModule,
     NgxAuthFirebaseUIModule.forRoot(environment.firebase, getProjName,
       {
         authGuardFallbackURL: '/auth'
-      })
+      }),
+    FormsModule
   ],
   providers: [],
   bootstrap:

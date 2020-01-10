@@ -11,5 +11,14 @@
   .step {
     min-height: 200px;
     width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-content {
+    flex: 1 1 auto;
+  }
+  .step-actions {
+    flex: 0 1 50px;
   }
 }

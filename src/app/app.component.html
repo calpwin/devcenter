@@ -1,6 +1,13 @@
 <div class="step-wrapper">
   <mat-card class="step">
-    <ckeditor [editor]="Editor" [config]="Config" data="<p>Hello, world!</p>" (ready)="onEditorReady($event)"></ckeditor>
+    <mat-card-content class="step-content">
+      <ckeditor [editor]="Editor" [config]="Config" [(ngModel)]="model.editorData"
+                (ready)="onEditorReady($event)"></ckeditor>
+    </mat-card-content>
+
+    <mat-card-actions class="step-actions">
+      <button mat-button (click)="saveStep()">SAVE</button>
+    </mat-card-actions>
   </mat-card>
 </div>
 
